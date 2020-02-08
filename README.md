@@ -9,7 +9,7 @@ This allows you to [tweak your icons on a per usage basis](https://github.com/pi
 
 This is a thin wrapper around our [svg2elm](https://github.com/pinata-llc/svg2elm) tool that solves one specific use case. However, you might be intersted in using `svg2elm` directly for greater flexibility.
 
-<img alt="showcase gif" src="https://i.imgur.com/nQFVP9I.gif" height="600">
+<img alt="showcase gif" src="https://i.imgur.com/nQFVP9I.gif">
 
 
 ## Installation
