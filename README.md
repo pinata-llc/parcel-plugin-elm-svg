@@ -16,7 +16,7 @@ This plugin is a thin wrapper around our [svg2elm](https://github.com/pinata-llc
 Add `parcel-plugin-elm-svg` as a development dependency to your project:
 
 ```console
-$ npm install -D parcel-plugin-elm-svg
+$ npm install -D parcel-plugin-elm-svg@latest
 ```
 
 

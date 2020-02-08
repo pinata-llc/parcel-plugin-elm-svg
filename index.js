@@ -4,25 +4,8 @@ const fs = require("fs");
 const path = require("path");
 const { generateModule } = require("svg2elm");
 
-async function setup(bundler) {
-  // Get config. Inspired by elwin013/parcel-plugin-static-files-copy
-
-  const mainAsset =
-    bundler.mainAsset || // parcel < 1.8
-    bundler.mainBundle.entryAsset || // parcel >= 1.8 single entry point
-    bundler.mainBundle.childBundles.values().next().value.entryAsset; // parcel >= 1.8 multiple entry points
-
-  let pkg;
-
-  if (typeof mainAsset.getPackage === "function") {
-    // parcel > 1.8
-    pkg = await mainAsset.getPackage();
-  } else {
-    // parcel <= 1.8
-    pkg = mainAsset.package;
-  }
-
-  const modules = pkg.elmSvgModules;
+function setup(config, watch) {
+  const modules = config.elmSvgModules;
 
   if (!modules || !modules.length) return;
 
@@ -53,7 +36,7 @@ async function setup(bundler) {
       });
     };
 
-    if (process.env.NODE_ENV === "development") {
+    if (watch) {
       chokidar.watch(src, { ignoreInitial: true }).on("all", generate);
     }
 
@@ -62,14 +45,17 @@ async function setup(bundler) {
 }
 
 module.exports = async function(bundler) {
-  const handler = () => {
-    setup(bundler);
-    bundler.off("bundled", handler);
-  };
+  try {
+    const pkgFile = path.join(bundler.options.rootDir, "package.json");
+    const pkg = await fs.promises.readFile(pkgFile);
 
-  bundler.on("bundled", handler);
+    setup(JSON.parse(pkg), bundler.options.watch);
+  } catch (err) {
+    error("Failed to get your configuration", err);
+  }
 };
 
 function error(message, error) {
-  console.error(`[ERROR] parcel-plugin-svg-elm: ${message}\n\n${error}`);
+  console.error(`[ERROR] parcel-plugin-svg-elm: ${message}`);
+  throw error;
 }
