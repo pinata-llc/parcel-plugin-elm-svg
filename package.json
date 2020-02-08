@@ -1,6 +1,6 @@
 {
   "name": "parcel-plugin-elm-svg",
-  "version": "1.0.1",
+  "version": "1.0.2",
   "description": "Automatically generate Elm modules out of your SVG files with svg2elm",
   "main": "index.js",
   "files": [
