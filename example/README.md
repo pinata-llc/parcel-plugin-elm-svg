@@ -27,3 +27,8 @@ $ npm start
 Navigate to [http://localhost:1234](http://localhost:1234) and you'll see it:
 
 <img alt="App Screenshot" src="https://i.imgur.com/q9q0vsu.png" width="600">
+
+
+## Icons
+
+The user icon in the example app is (C) Font Awesome.
