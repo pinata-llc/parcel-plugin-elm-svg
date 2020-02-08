@@ -1,11 +1,12 @@
 module Main exposing (main)
 
 import Acme.Icons exposing (chevron, elm, user)
-import Html exposing (aside, div, h1, header, text)
+import Html exposing (Html, aside, div, h1, header, text)
 import Html.Attributes exposing (style)
-import Svg.Attributes exposing (fill, height, stroke, strokeWidth, transform, width)
+import Svg.Attributes exposing (fill, height, stroke, strokeWidth, width)
 
 
+main : Html msg
 main =
     div []
         [ header []
@@ -15,13 +16,9 @@ main =
                     [ width "20"
                     , height "20"
                     , fill "#272727"
+                    , style "margin-right" "5px"
                     ]
-                , chevron
-                    [ style "margin-left" "5px"
-                    , width "15"
-                    , strokeWidth "10"
-                    , stroke "#272727"
-                    ]
+                , chevron [ stroke "#272727", width "20", strokeWidth "10" ]
                 ]
             ]
         , elm []

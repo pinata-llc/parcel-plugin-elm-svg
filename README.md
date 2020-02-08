@@ -7,7 +7,9 @@ This parcel plugin automatically generates Elm modules out of your SVG files so 
 
 This allows you to [tweak your icons on a per usage basis](https://github.com/pinata-llc/svg2elm#svg-attributes), so you can reuse your icon in different places of your app where you might need different colors, sizes, line widths, you name it!
 
-This is a thin wrapper around our [svg2elm](https://github.com/pinata-llc/svg2elm) tool, it solves one specific use case. However, you might be intersted in using `svg2elm` directly 
+This is a thin wrapper around our [svg2elm](https://github.com/pinata-llc/svg2elm) tool, it solves one specific use case. However, you might be intersted in using `svg2elm` directly for greater flexibility.
+
+<img src="https://i.imgur.com/fx9g7WC.gif" width="873" height="497">
 
 
 ## Installation
@@ -26,9 +28,6 @@ $ npm install -D parcel-plugin-elm-svg
 Open up your `package.json` file and add:
 
 ```json
-{
-    ...
-
     "elmSvgModules": [
         {
             "src": "assets/*.svg",
@@ -36,7 +35,6 @@ Open up your `package.json` file and add:
             "dest": "src/Acme/Icons.elm"
         }
     ]
-}
 ```
 
 This configuration will take all `.svg` files under the `assets` directory and generate an `Acme.Icons` Elm module at `src/Acme/Icons.elm` with a function per file.
@@ -67,7 +65,7 @@ Just run parcel as you normally would:
 $ parcel src/app.html
 ```
 
-### Usage from Elm
+### Using your icons
 
 We can now use our generated icon functions in our Elm app:
 
@@ -75,6 +73,7 @@ We can now use our generated icon functions in our Elm app:
 module Main exposing (main)
 
 import Html
+import Svg.Attributes exposing (fill, transform)
 import Acme.Icons exposing (user, chevron)
 
 main = 
@@ -85,9 +84,12 @@ main =
         ]
 ```
 
-## Example
 
-Check out the example app under [example](example).
+We hope you enjoy this plugin! 
+
+Check out [svg2elm](https://github.com/pinata-llc/svg2elm) docs and the [example](example) app for more information. 
+
+<small>The user icon in the example app is (C) Font Awesome.</small>
 
 ## License
 
