@@ -1,0 +1,25 @@
+{
+  "name": "parcel-plugin-elm-svg-example",
+  "version": "0.1.0",
+  "description": "A parcel-plugin-elm-svg example",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "parcel index.html"
+  },
+  "author": "Agustín Zubiaga <agustin@gopinata.com>",
+  "license": "BSD-3-Clause",
+  "devDependencies": {
+    "elm-hot": "^1.1.4",
+    "node-elm-compiler": "^5.0.4",
+    "parcel-bundler": "^1.12.4",
+    "parcel-plugin-elm-svg": "../"
+  },
+  "elmSvgModules": [
+    {
+      "src": "./assets/*.svg",
+      "name": "Acme.Icons",
+      "dest": "src/Acme/Icons.elm"
+    }
+  ]
+}

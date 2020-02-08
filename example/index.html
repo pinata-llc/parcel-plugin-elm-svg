@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Elm example app</title>
+    <style> 
+        body {
+            font-family: -apple-system, sans-serif;
+            margin: 0;
+        }
+
+        header {
+            position: fixed;
+            top: 0;
+            box-sizing: border-box;
+            width: 100%;
+            background-color: rgba(255,255,255,0.5);
+            backdrop-filter: blur(10px);
+            padding: 20px;
+            color: #272727;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        aside {
+            display: flex;
+            align-items: center;
+        }
+
+        h1 {
+            margin: 0;
+            font-weight: 300;
+        }
+    </style>
+</head>
+<body>
+    <div id="main"></div>
+    <script src="src/index.js"></script>
+</body>
+</html>

@@ -1,6 +1,7 @@
 const chokidar = require("chokidar");
 const glob = require("glob");
 const fs = require("fs");
+const path = require("path");
 const { generateModule } = require("svg2elm");
 
 async function setup(bundler) {
@@ -25,7 +26,18 @@ async function setup(bundler) {
 
   if (!modules || !modules.length) return;
 
-  modules.forEach(({ name, src, dest }) => {
+
+  modules.forEach(async ({ name, src, dest }) => {
+    try {
+      await fs.promises.stat(dest);
+    } catch (err) {
+        if (err.code === 'ENOENT') {
+          await fs.promises.mkdir(path.dirname(dest), { recursive: true })
+        } else {
+          throw err;
+        }
+    }
+
     const generate = () => {
       glob(src, {}, async (err, filePaths) => {
         if (err) {
@@ -48,9 +60,12 @@ async function setup(bundler) {
 }
 
 module.exports = async function(bundler) {
-  bundler.on("bundled", () => {
+  const handler = () => {
     setup(bundler);
-  });
+    bundler.off("bundled", handler);
+  };
+
+  bundler.on("bundled", handler);
 };
 
 function error(message, error) {

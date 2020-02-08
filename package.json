@@ -1,7 +1,7 @@
 {
   "name": "parcel-plugin-elm-svg",
   "version": "0.1.0",
-  "description": "Parcel plugin that generates Elm modules out of your SVG files with svg2elm",
+  "description": "Automatically generate Elm modules out of your SVG files with svg2elm",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -11,6 +11,7 @@
     "url": "git+https://github.com/pinata-llc/parcel-plugin-elm-svg.git"
   },
   "keywords": [
+    "parcel",
     "parcel-bundler",
     "elm",
     "svg",
@@ -28,7 +29,7 @@
     "chokidar": "^3.3.1",
     "glob": "^7.1.6",
     "parcel-bundler": "^1.12.4",
-    "svg2elm": "^1.0.1"
+    "svg2elm": "^1.2.0"
   },
   "devDependencies": {
     "@types/chokidar": "^2.1.3",
