@@ -44,15 +44,15 @@ Tweak module properties to match your needs:
 <table>
     <tr>
         <td>src</td>
-        <td>A glob matching the SVG files to include in this module. </td>
+        <td>A glob matching the SVG files to include in this module. <a href="https://www.npmjs.com/package/glob#glob-primer">Check out the rules</a>.</td>
     </tr>
     <tr>
         <td>name</td>
-        <td>The name of the Elm module to generate</td>
+        <td>The name of the Elm module to generate.</td>
     </tr>
     <tr>
         <td>dest</td>
-        <td>The destination file path for your generated module</td>
+        <td>The destination file path for your generated module.</td>
     </tr>
 </table>
 
