@@ -85,11 +85,9 @@ main =
         ]
 ```
 
-
-
 ## Example
 
-Check out the example app 
+Check out the example app under [example](example).
 
 ## License
 
