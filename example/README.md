@@ -26,5 +26,4 @@ $ npm start
 
 Navigate to [http://localhost:1234](http://localhost:1234) and you'll see it:
 
-
-![App Screenshot](https://i.imgur.com/q9q0vsu.png)
+<img alt="App Screenshot" src="https://i.imgur.com/q9q0vsu.png" width="600">
