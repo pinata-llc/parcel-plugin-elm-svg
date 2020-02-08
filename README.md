@@ -1,6 +1,6 @@
 # parcel-plugin-elm-svg
 
-[![npm version](https://img.shields.io/npm/v/parcel-plugin-elm-svg.svg)](https://www.npmjs.com/package/svg2elm) [![GitHub license](https://img.shields.io/npm/l/parcel-plugin-elm-svg)](LICENSE)
+[![npm version](https://img.shields.io/npm/v/parcel-plugin-elm-svg.svg)](https://www.npmjs.com/package/parcel-plugin-elm-svg) [![GitHub license](https://img.shields.io/npm/l/parcel-plugin-elm-svg)](LICENSE)
 
 
 This parcel plugin automatically generates Elm modules out of your SVG files so you can easily inline icons in your Elm app without having to use Image elements. 
@@ -9,7 +9,7 @@ This allows you to [tweak your icons on a per usage basis](https://github.com/pi
 
 This is a thin wrapper around our [svg2elm](https://github.com/pinata-llc/svg2elm) tool that solves one specific use case. However, you might be intersted in using `svg2elm` directly for greater flexibility.
 
-<img alt="showcase gif" src="https://i.imgur.com/fx9g7WC.gif" width="873" height="497">
+<img alt="showcase gif" src="https://i.imgur.com/nQFVP9I.gif" height="600">
 
 
 ## Installation
