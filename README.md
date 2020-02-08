@@ -7,9 +7,9 @@ This parcel plugin automatically generates Elm modules out of your SVG files so 
 
 This allows you to [tweak your icons on a per usage basis](https://github.com/pinata-llc/svg2elm#svg-attributes), so you can reuse your icon in different places of your app where you might need different colors, sizes, line widths, you name it!
 
-This is a thin wrapper around our [svg2elm](https://github.com/pinata-llc/svg2elm) tool, it solves one specific use case. However, you might be intersted in using `svg2elm` directly for greater flexibility.
+This is a thin wrapper around our [svg2elm](https://github.com/pinata-llc/svg2elm) tool that solves one specific use case. However, you might be intersted in using `svg2elm` directly for greater flexibility.
 
-<img src="https://i.imgur.com/fx9g7WC.gif" width="873" height="497">
+<img alt="showcase gif" src="https://i.imgur.com/fx9g7WC.gif" width="873" height="497">
 
 
 ## Installation
@@ -73,21 +73,20 @@ We can now use our generated icon functions in our Elm app:
 module Main exposing (main)
 
 import Html
-import Svg.Attributes exposing (fill, transform)
+import Svg.Attributes exposing (fill, width, stroke)
 import Acme.Icons exposing (user, chevron)
 
 main = 
     Html.div [] 
         [ user [ fill "red" ]
-        , chevron []
-        , user [ fill "blue", transform "rotate(90)" ]
+        , chevron [ stroke "red" ]
+        , user [ fill "blue", width "20" ]
         ]
 ```
 
-
-We hope you enjoy this plugin! 
-
 Check out [svg2elm](https://github.com/pinata-llc/svg2elm) docs and the [example](example) app for more information. 
+
+We hope you enjoy the plugin!
 
 <small>The user icon in the example app is (C) Font Awesome.</small>
 
