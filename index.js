@@ -26,7 +26,6 @@ async function setup(bundler) {
 
   if (!modules || !modules.length) return;
 
-
   modules.forEach(async ({ name, src, dest }) => {
     try {
       await fs.promises.stat(dest);
@@ -54,7 +53,10 @@ async function setup(bundler) {
       });
     };
 
-    chokidar.watch(src, { ignoreInitial: true }).on("all", generate);
+    if (process.env.NODE_ENV === "development") {
+      chokidar.watch(src, { ignoreInitial: true }).on("all", generate);
+    }
+
     generate();
   });
 }
