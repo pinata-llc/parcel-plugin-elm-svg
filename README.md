@@ -112,7 +112,7 @@ We hope you enjoy the plugin!
 
 PRs and Issues are welcome!
 
-Bugs or Feature Requests related to the parcel plugin must be raised in [this repository](https://github.com/pinata-llc/parcel-plugin-elm-svg). 
+Bugs and Feature Requests related to the parcel plugin must be raised in [this repository](https://github.com/pinata-llc/parcel-plugin-elm-svg). 
 
 If your assets are not getting converted to Elm functions properly, the problem is likely to exist in [svg2elm](https://github.com/pinata-llc/svg2elm) instead. For example, if your generated Elm module does not compile, or the Svg does not look as it should, please raise your PR or issue in the [svg2elm](https://github.com/pinata-llc/svg2elm) repository.
 
