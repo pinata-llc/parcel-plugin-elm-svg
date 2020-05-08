@@ -29,8 +29,8 @@
   },
   "homepage": "https://github.com/pinata-llc/parcel-plugin-elm-svg#readme",
   "dependencies": {
-    "chokidar": "^3.3.1",
+    "chokidar": "^3.4.0",
     "glob": "^7.1.6",
-    "svg2elm": "^1.2.1"
+    "svg2elm": "^1.2.3"
   }
 }
