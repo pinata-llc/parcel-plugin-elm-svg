@@ -46,7 +46,7 @@ function setup(config, watch) {
 
 module.exports = async function(bundler) {
   try {
-    const pkgFile = path.join(bundler.options.rootDir, "package.json");
+    const pkgFile = path.join(require('./package.json')._where, "package.json");
     const pkg = await fs.promises.readFile(pkgFile);
 
     setup(JSON.parse(pkg), bundler.options.watch);
