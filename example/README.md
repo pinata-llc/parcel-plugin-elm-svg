@@ -4,7 +4,7 @@ This little example app shows how you can set up `parcel-plugin-elm-svg`.
 
 You can find the... 
 - module configuration under [package.json](package.json#L18)
-- source icons under [assets](assets)
+- source icons under [src/assets](src/assets)
 - generated module under [src/Acme/Icons.elm](src/Acme/Icons.elm)
 - usage under [src/Main.elm](src/Main.elm)
 

@@ -44,9 +44,26 @@ function setup(config, watch) {
   });
 }
 
+function resolveConfigPath(directory) {
+  const packageJson = path.resolve(directory, "package.json");
+
+  if (fs.existsSync(packageJson)) {
+    return packageJson;
+  }
+
+  const parentDir = path.dirname(directory);
+
+  if (parentDir === directory) {
+    // System root
+    return error("Couldn't not find your package.json file");
+  }
+
+  return resolveConfigPath(path.dirname(directory));
+}
+
 module.exports = async function(bundler) {
   try {
-    const pkgFile = path.join(require('./package.json')._where, "package.json");
+    const pkgFile = resolveConfigPath(bundler.options.rootDir);
     const pkg = await fs.promises.readFile(pkgFile);
 
     setup(JSON.parse(pkg), bundler.options.watch);

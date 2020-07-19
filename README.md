@@ -10,6 +10,10 @@ This plugin is a thin wrapper around our [svg2elm](https://github.com/pinata-llc
 
 <img alt="showcase gif" src="https://i.imgur.com/nQFVP9I.gif">
 
+## Update
+
+This plugin had a bug that prevented its configuration from loading if the parcel entry didn't exist in the same directory as `package.json`. That's fixed now!
+Please create an issue if it still doesn't work for you :)
 
 ## Installation
 
@@ -122,6 +126,6 @@ BSD-3-Clause. See the [LICENSE](LICENSE) file.
 
 ## Humans
 
-Built by [Piotr Brzeziński](https://github.com/brzezinskip) and [Agustín Zubiaga](https://github.com/aguzubiaga) at [PINATA.](https://www.gopinata.com)
+Built by [Piotr Brzeziński](https://github.com/brzezinskip), [Diogo do Carmo](https://github.com/dccarmo), and [Agustín Zubiaga](https://github.com/agu-z) at [PINATA.](https://www.gopinata.com)
 
 ♥︎
