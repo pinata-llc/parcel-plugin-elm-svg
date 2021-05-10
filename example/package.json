@@ -12,7 +12,7 @@
   "license": "BSD-3-Clause",
   "devDependencies": {
     "elm-hot": "^1.1.4",
-    "node-elm-compiler": "^5.0.4",
+    "node-elm-compiler": "^5.0.6",
     "parcel-bundler": "^1.12.4",
     "parcel-plugin-elm-svg": "../"
   },
@@ -22,5 +22,6 @@
       "name": "Acme.Icons",
       "dest": "src/Acme/Icons.elm"
     }
-  ]
+  ],
+  "dependencies": {}
 }
